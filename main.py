@@ -8,5 +8,12 @@ import csv
 import pytesseract
 
 path_to_image = "./test_images/test_image_1.png"
-image = cv2.imread(path_to_image, 0)
+
+text = pytesseract.image_to_string(
+    Image.open(path_to_image),
+    lang="eng",
+    config="--psm 6 --oem 1"
+)
+
+
 
